@@ -1,0 +1,25 @@
+<mat-tab-group>
+  <mat-tab *ngFor="let activity of dataSource" [label]="activity.title">
+    <div>
+      <p>{{ activity.description }}</p>
+      <p>Inicio: {{ activity.startTime | date : "short" }}</p>
+      <p>Fin: {{ activity.endTime | date : "short" }}</p>
+      <button
+        mat-raised-button
+        class="me-8 mb-8"
+        color="accent"
+        (click)="editActivity.emit(activity.id)"
+      >
+        Editar
+      </button>
+      <button
+        mat-raised-button
+        class="me-8 mb-8"
+        color="warn"
+        (click)="deleteActivity.emit(activity.id)"
+      >
+        Eliminar
+      </button>
+    </div>
+  </mat-tab>
+</mat-tab-group>

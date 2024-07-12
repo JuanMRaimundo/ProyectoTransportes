@@ -1,0 +1,26 @@
+<!-- Drivers Interface -->
+<mat-progress-bar
+  mode="indeterminate"
+  value="40"
+  *ngIf="loadingDrivers"
+></mat-progress-bar>
+
+<mat-card>
+  <mat-card-content>
+    <h2 class="mb-60">Choferes</h2>
+    <mat-card class="button-row d-flex flex-wrap mb-24"> </mat-card>
+    <button
+      mat-raised-button
+      class="button-row mb-8"
+      color="primary"
+      (click)="addDriver()"
+    >
+      Agregar Chofer
+    </button>
+    <app-drivers-table
+      [dataSource]="(drivers$ | async) || []"
+      (editDriver)="onEditDriver($event)"
+      (deleteDriver)="onDeleteDriver($event)"
+    ></app-drivers-table>
+  </mat-card-content>
+</mat-card>

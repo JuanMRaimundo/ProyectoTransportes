@@ -1,0 +1,30 @@
+<mat-grid-list cols="3" rowHeight="1:1">
+  <mat-grid-tile *ngFor="let driver of dataSource">
+    <mat-card>
+      <!-- Tal vez podemos agregar una foto de cada uno -->
+      <mat-card-header>
+        <mat-card-title>{{ driver.name }}</mat-card-title>
+        <mat-card-subtitle>{{ driver.mobile }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content> </mat-card-content>
+      <mat-card-actions>
+        <button
+          mat-fab
+          class="mb-8 me-8"
+          color="accent"
+          (click)="editDriver.emit(driver.id)"
+        >
+          Editar
+        </button>
+        <button
+          mat-fab
+          class="mb-8 me-8"
+          color="warn"
+          (click)="deleteDriver.emit(driver.id)"
+        >
+          Eliminar
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

@@ -1,0 +1,156 @@
+<!-- Daily Activity -->
+<mat-card class="w-100">
+  <mat-card-content>
+    <h4 class="mb-56">Viajes Asignados</h4>
+    <mat-form-field class="input-search" appearance="fill">
+      <mat-label>Buscar</mat-label>
+      <input
+        matInput
+        type="text"
+        [(ngModel)]="keyword"
+        placeholder="Ingrese su búsqueda"
+        (ngModelChange)="onSearch()"
+      />
+    </mat-form-field>
+    <div class="table-responsive">
+      <table mat-table [dataSource]="dataSource" class="text-nowrap w-80">
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>Id</th>
+          <td mat-cell class="fw-medium" *matCellDef="let element">
+            {{ element.id }}
+          </td>
+        </ng-container>
+
+        <!-- Time Column -->
+        <ng-container matColumnDef="time">
+          <th mat-header-cell *matHeaderCellDef>Hora</th>
+          <td mat-cell class="fw-medium" *matCellDef="let element">
+            {{ element.time }}
+          </td>
+        </ng-container>
+        <!-- Dispatcher Column -->
+        <ng-container matColumnDef="dispatcher">
+          <th mat-header-cell *matHeaderCellDef>Despachante</th>
+          <td mat-cell class="fw-medium" *matCellDef="let element">
+            {{ element.dispatcher }}
+          </td>
+        </ng-container>
+        <!-- Client Column -->
+        <ng-container matColumnDef="client">
+          <th mat-header-cell *matHeaderCellDef>Cliente</th>
+          <td mat-cell class="fw-medium" *matCellDef="let element">
+            {{ element.client }}
+          </td>
+        </ng-container>
+        <!-- Detail Column -->
+        <ng-container matColumnDef="detail">
+          <th mat-header-cell *matHeaderCellDef>Detalle</th>
+          <td mat-cell class="fw-medium" *matCellDef="let element">
+            {{ element.detail }}
+          </td>
+        </ng-container>
+        <!-- LoadingPlace Column -->
+        <ng-container matColumnDef="loadingPlace">
+          <th mat-header-cell *matHeaderCellDef>Carga</th>
+          <td mat-cell class="fw-medium" *matCellDef="let element">
+            {{ element.loadingPlace }}
+          </td>
+        </ng-container>
+        <!-- DestinationPlace Column -->
+        <ng-container matColumnDef="destinationPlace">
+          <th mat-header-cell *matHeaderCellDef>Destino</th>
+          <td mat-cell class="fw-medium" *matCellDef="let element">
+            {{ element.destinationPlace }}
+          </td>
+        </ng-container>
+        <!-- Driver Column -->
+
+        <!-- PRUEBA FILTRADO DE SELECTOR -->
+
+        <ng-container matColumnDef="driver">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-form-field>
+              <mat-label>Chofer</mat-label>
+              <mat-select
+                [(ngModel)]="selectedDriver"
+                (selectionChange)="applyDriverFilter($event)"
+                multiple
+              >
+                <mat-option
+                  *ngFor="let driver of drivers"
+                  [value]="driver.name"
+                  >{{ driver.name }}</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </th>
+          <td mat-cell *matCellDef="let element">{{ element.driver }}</td>
+        </ng-container>
+
+        <!-- <ng-container matColumnDef="driver">
+          <th mat-header-cell *matHeaderCellDef>Chofer</th>
+          <td mat-cell class="fw-medium" *matCellDef="let element">
+            {{ element.driver }}
+          </td>
+        </ng-container> -->
+
+        <!-- Mobile Column -->
+        <ng-container matColumnDef="mobile">
+          <th mat-header-cell *matHeaderCellDef>Coche</th>
+          <td mat-cell class="fw-medium" *matCellDef="let element">
+            {{ element.mobile }}
+          </td>
+        </ng-container>
+        <!-- Container Column -->
+        <ng-container matColumnDef="container">
+          <th mat-header-cell *matHeaderCellDef>Contenedor</th>
+          <td mat-cell class="fw-medium" *matCellDef="let element">
+            {{ element.container }}
+          </td>
+        </ng-container>
+        <!-- Expiration Column -->
+        <ng-container matColumnDef="expiration">
+          <th mat-header-cell *matHeaderCellDef>Vencimiento</th>
+          <td mat-cell class="fw-medium" *matCellDef="let element">
+            {{ element.expiration | date }}
+          </td>
+        </ng-container>
+        <!-- CodRef Column -->
+        <ng-container matColumnDef="codeRef">
+          <th mat-header-cell *matHeaderCellDef>Ref.</th>
+          <td mat-cell class="fw-medium" *matCellDef="let element">
+            {{ element.codRef }}
+          </td>
+        </ng-container>
+
+        <!-- Actions Column -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Acciones</th>
+          <td mat-cell *matCellDef="let trip">
+            <button
+              mat-icon-button
+              (click)="editTrip.emit(trip.id)"
+              color="accent"
+            >
+              <mat-icon>edit_square</mat-icon>
+            </button>
+            <button mat-icon-button [routerLink]="trip.id" color="primary">
+              <mat-icon>visibility</mat-icon>
+            </button>
+            <button
+              mat-icon-button
+              (click)="deleteTrip.emit(trip.id)"
+              color="warn"
+            >
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+  </mat-card-content>
+</mat-card>

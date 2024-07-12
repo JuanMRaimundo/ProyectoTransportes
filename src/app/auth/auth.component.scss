@@ -1,0 +1,77 @@
+/* Estilos para el contenedor de autenticación */
+.auth-wrapper {
+  position: relative;
+}
+
+/* Estilos para el logotipo de autenticación */
+.auth-logo-content {
+  text-align: center;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.auth-logo {
+  margin-bottom: 16px;
+}
+
+.auth-logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.auth-logo img {
+  width: 70px; /* Ajusta el ancho según sea necesario */
+}
+
+.auth-logo .ms-16 {
+  margin-left: 16px;
+  font-weight: 500;
+  font-size: 26px;
+}
+
+/* Estilos para el formulario de inicio de sesión */
+.body-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.page-wrapper {
+  width: 400px; /* Ajusta el ancho del contenedor según sea necesario */
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+}
+
+.card-body {
+  text-align: center;
+}
+
+h4.mb-32 {
+  margin-bottom: 32px;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.additional-info {
+  margin-bottom: 8px;
+}
+
+.additional-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.additional-info a:hover {
+  text-decoration: underline;
+}

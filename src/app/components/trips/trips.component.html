@@ -1,0 +1,13 @@
+<mat-progress-bar *ngIf="loadingTrips" mode="indeterminate"></mat-progress-bar>
+
+<app-trips-table
+  [dataSource]="(trips$ | async) || []"
+  (deleteTrip)="onDeleteTrip($event)"
+  (editTrip)="onEditTrip($event)"
+>
+</app-trips-table>
+<div>
+  <button mat-raised-button (click)="addTrip()" color="primary">
+    Agregar Viaje
+  </button>
+</div>

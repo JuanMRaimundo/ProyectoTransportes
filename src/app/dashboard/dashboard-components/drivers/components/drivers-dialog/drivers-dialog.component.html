@@ -1,0 +1,55 @@
+<h1 mat-dialog-title>
+  {{ driverId ? "Editar chofer" : "Crear chofer" }}
+</h1>
+<mat-progress-bar
+  *ngIf="loadingDialog && driverId"
+  mode="indeterminate"
+></mat-progress-bar>
+<div mat-dialog-content>
+  <form [formGroup]="driverForm">
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Nombre</mat-label>
+          <input [formControl]="nameControl" matInput />
+          <mat-error>
+            {{ driverForm.get("name")?.errors | errorForms }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Apellido</mat-label>
+          <input matInput [formControl]="lastNameControl" />
+          <mat-error>
+            {{ driverForm.get("lastName")?.errors | errorForms }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Móvil</mat-label>
+          <input matInput [formControl]="mobileControl" />
+          <mat-error>
+            {{ driverForm.get("mobile")?.errors | errorForms }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-3">
+        <mat-form-field class="w-100">
+          <mat-label>Age</mat-label>
+          <input matInput [formControl]="ageControl" />
+          <mat-error>
+            {{ driverForm.get("age")?.errors | errorForms }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-dialog-close mat-raised-button color="warn">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()">
+    Guardar
+  </button>
+</div>

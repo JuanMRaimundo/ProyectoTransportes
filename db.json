@@ -1,0 +1,182 @@
+{
+  "users": [
+    {
+      "id": "8",
+      "name": "Franco",
+      "lastname": "Guzzo",
+      "user": "francoG",
+      "password": "lupe123",
+      "role": "ADMIN",
+      "state": true,
+      "token": "kj23nkj342kj23kjj32"
+    },
+    {
+      "id": "5",
+      "name": "Gilda",
+      "lastname": "Pérez",
+      "user": "gildaP",
+      "password": "lupe123",
+      "role": "USER",
+      "state": true,
+      "token": "k09asd098sd0a0a9d"
+    }
+  ],
+  "trips": [
+    {
+      "time": "08:30",
+      "dispatcher": "ARG.CARGO",
+      "client": "SIEGWERK",
+      "detail": "1 Bulto 1005 kg",
+      "loadingPlace": "GEMEZ PTO",
+      "destinationPlace": "TORTUGUITAS",
+      "driver": "Sebastian",
+      "mobile": null,
+      "container": 12345,
+      "expiration": "2024-01-30T03:00:00.000Z",
+      "codeRef": "54322",
+      "id": "1"
+    },
+    {
+      "time": "12:35",
+      "dispatcher": "Ignacio",
+      "client": "DENOR",
+      "detail": "1111KG",
+      "loadingPlace": "MONTER",
+      "destinationPlace": "NEGRO",
+      "driver": "Sebastian",
+      "mobile": null,
+      "container": "38",
+      "expiration": "2024-01-30T03:00:00.000Z",
+      "codeRef": "23234",
+      "id": "wC6Ls1Z"
+    },
+    {
+      "time": "8:45",
+      "dispatcher": "PLUTO",
+      "client": "Cletox",
+      "detail": "3 PALETS",
+      "loadingPlace": "SAN ISIDRO",
+      "destinationPlace": "BURZACO",
+      "driver": "Sebastian",
+      "mobile": "666",
+      "container": "634",
+      "expiration": "2024-01-27T03:00:00.000Z",
+      "codeRef": "236",
+      "id": "SN_-rgd"
+    },
+    {
+      "time": "10:30",
+      "dispatcher": "StarKI",
+      "client": "Guzzos",
+      "detail": "muchos bultos",
+      "loadingPlace": "Casa Santi",
+      "destinationPlace": "Casa franco",
+      "driver": "Sebastian",
+      "mobile": null,
+      "container": "4",
+      "expiration": "2024-01-31T03:00:00.000Z",
+      "codeRef": "32132",
+      "id": "vxpJ7fm"
+    },
+    {
+      "time": "10:00",
+      "dispatcher": "OutDoor",
+      "client": "Segba",
+      "detail": "3 Bultos",
+      "loadingPlace": "Morón",
+      "destinationPlace": "Azul",
+      "driver": "Franco",
+      "mobile": null,
+      "container": "5843",
+      "expiration": "2024-02-03T03:00:00.000Z",
+      "codeRef": "223",
+      "id": "E5mxmsR"
+    },
+    {
+      "time": "15:30",
+      "dispatcher": "LABAC",
+      "client": "TINOR",
+      "detail": "5 palets",
+      "loadingPlace": "Budge",
+      "destinationPlace": "Liniers",
+      "driver": "Franco",
+      "mobile": "5844",
+      "container": null,
+      "expiration": "2024-02-02T03:00:00.000Z",
+      "codeRef": "365",
+      "id": "wC6Ls1Z1"
+    },
+    {
+      "time": "16:30",
+      "dispatcher": "GBT",
+      "client": "FaxLab",
+      "detail": "8 palets",
+      "loadingPlace": "Balcarce",
+      "destinationPlace": "Concordia",
+      "driver": "Fernanda",
+      "mobile": "333",
+      "container": "2",
+      "expiration": "2024-02-06T03:00:00.000Z",
+      "codeRef": "23",
+      "id": "-pT6a4r"
+    }
+  ],
+  "drivers": [
+    {
+      "id": "01",
+      "name": "Sebastian",
+      "lastName": "Rodriguez",
+      "mobile": "Acoplado"
+    },
+    {
+      "id": "02",
+      "name": "Franco",
+      "lastName": "Mazzucheli",
+      "mobile": "Acoplado"
+    },
+    {
+      "id": "021",
+      "name": "Fernanda",
+      "lastName": "Callejón",
+      "mobile": "432",
+      "age": "29"
+    }
+  ],
+  "dailyActivitys": [
+    {
+      "id": "001",
+      "title": "Llamar",
+      "description": "Llamar a Julio de maestranza",
+      "startTime": "02/02/2024",
+      "endTime": "04/02/2024"
+    },
+    {
+      "title": "Pintar sorete",
+      "description": "Hacer una buena caca",
+      "startTime": "2024-01-29T03:00:00.000Z",
+      "endTime": "2024-01-30T03:00:00.000Z",
+      "id": "5t55zef1"
+    },
+    {
+      "id": "5t55zef11",
+      "title": "sdfsdfsdf",
+      "description": "dsfsdf",
+      "startTime": "2024-01-31T03:00:00.000Z",
+      "endTime": "2024-01-30T03:00:00.000Z"
+    },
+    {
+      "id": "5t55zef111",
+      "title": "sdfsdfsdfsdf",
+      "description": "sdfsdfsdf",
+      "startTime": "2024-01-26T03:00:00.000Z",
+      "endTime": "2024-01-27T03:00:00.000Z"
+    },
+    {
+      "id": "SMkXyJz",
+      "title": "Remito",
+      "description": "Generar remito de Vanguardia SA",
+      "startTime": "2024-01-27T03:00:00.000Z",
+      "endTime": "2024-01-30T03:00:00.000Z"
+    }
+  ]
+}

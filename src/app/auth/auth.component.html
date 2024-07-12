@@ -1,0 +1,54 @@
+<!-- Login´s Logo -->
+<div class="auth-wrapper">
+  <div class="auth-logo-content p-16">
+    <div class="auth-logo mb-16">
+      <a href="javascript:void(0)" class="d-flex align-items-center">
+        <img src="assets/images/logo-login.png" alt="" />
+        <span class="ms-16 fw-medium fs-26">Transportes Guzzo</span>
+      </a>
+    </div>
+  </div>
+  <!-- Content -->
+  <div class="body-wrapper">
+    <div class="page-wrapper">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="mb-32">Iniciar Sesión</h4>
+          <form [formGroup]="loginForm" class="w-50">
+            <mat-form-field class="w-80 fs-16" appearance="outline">
+              <mat-label>Usuario</mat-label>
+              <input
+                matInput
+                type="text"
+                placeholder="Ingresá tu usuario"
+                formControlName="user"
+              />
+            </mat-form-field>
+
+            <mat-form-field class="w-80 fs-16" appearance="outline">
+              <mat-label>Contraseña</mat-label>
+              <input
+                matInput
+                type="password"
+                placeholder="Ingresá tu contraseña"
+                formControlName="password"
+              />
+            </mat-form-field>
+            <button
+              mat-raised-button
+              class="me-8 mb-8"
+              color="primary"
+              (click)="login()"
+              type="submit"
+            >
+              Iniciar sesión
+            </button>
+          </form>
+          <p class="additional-info mb-8">
+            ¿Olvidaste tu contraseña? <a href="">Recupérala aquí</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

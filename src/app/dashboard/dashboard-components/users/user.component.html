@@ -1,0 +1,26 @@
+<!-- Users Interface -->
+<mat-progress-bar
+  mode="indeterminate"
+  value="40"
+  *ngIf="loadingUsers"
+></mat-progress-bar>
+
+<mat-card>
+  <mat-card-content>
+    <h2 class="mb-60">Usuarios</h2>
+    <mat-card class="button-row d-flex flex-wrap mb-24"> </mat-card>
+    <button
+      mat-raised-button
+      class="button-row mb-8"
+      color="primary"
+      (click)="addUser()"
+    >
+      Agregar Usuario
+    </button>
+    <app-user-table
+      [dataSource]="(users$ | async) || []"
+      (editUser)="onEditUser($event)"
+      (deleteUser)="onDeleteUser($event)"
+    ></app-user-table>
+  </mat-card-content>
+</mat-card>

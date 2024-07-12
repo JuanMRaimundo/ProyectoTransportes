@@ -1,0 +1,71 @@
+<h1 mat-dialog-title>
+  {{ userId ? "Editar usuario" : "Crear usuario" }}
+</h1>
+<mat-progress-bar
+  *ngIf="loadingDialog && userId"
+  mode="indeterminate"
+></mat-progress-bar>
+<div mat-dialog-content>
+  <form [formGroup]="userForm">
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Nombre</mat-label>
+          <input [formControl]="nameControl" matInput />
+          <mat-error>
+            {{ userForm.get("name")?.errors | errorForms }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Apellido</mat-label>
+          <input matInput [formControl]="lastNameControl" />
+          <mat-error>
+            {{ userForm.get("name")?.errors | errorForms }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>ID de Usuario</mat-label>
+          <input matInput [formControl]="userIdControl" />
+
+          <mat-error>
+            {{ userIdControl.errors | errorForms }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Contraseña</mat-label>
+          <input matInput [formControl]="passwordControl" type="password" />
+
+          <mat-error>
+            {{ passwordControl.errors | errorForms }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="col-6">
+        <mat-form-field class="w-100">
+          <mat-label>Puesto</mat-label>
+          <mat-select [formControl]="roleControl">
+            <mat-option value="ADMIN">Admin</mat-option>
+            <mat-option value="EMPLOYED">Usuario</mat-option>
+          </mat-select>
+
+          <mat-error>
+            {{ roleControl.errors | errorForms }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-dialog-close mat-raised-button color="warn">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()">
+    Guardar
+  </button>
+</div>

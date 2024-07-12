@@ -1,0 +1,28 @@
+<!-- Daily Activity -->
+<mat-progress-bar
+  mode="indeterminate"
+  value="40"
+  *ngIf="loadingActivitys"
+></mat-progress-bar>
+
+<mat-card>
+  <mat-card-content>
+    <h4 class="mb-60">Actividades del día</h4>
+    <div class="button-row d-flex flex-wrap mb-24">
+      <button
+        mat-raised-button
+        class="me-8 mb-8"
+        color="primary"
+        (click)="addActivity()"
+      >
+        Agregar Actividad
+      </button>
+    </div>
+    <app-activitys-tab
+      [dataSource]="(activitys$ | async) || []"
+      (editActivity)="onEditActivity($event)"
+      (deleteActivity)="onDeleteActivity($event)"
+    ></app-activitys-tab>
+  </mat-card-content>
+</mat-card>
+<app-activitys-tab></app-activitys-tab>

@@ -1,0 +1,99 @@
+<h1 mat-dialog-title class="dialog-title">
+  {{ tripID ? "Editar viaje" : "Crear viaje" }}
+</h1>
+<mat-progress-bar
+  *ngIf="loadingDialog && tripID"
+  mode="indeterminate"
+></mat-progress-bar>
+<div mat-dialog-content class="dialog-content">
+  <form class="row">
+    <div class="col-3">
+      <mat-form-field class="w-100">
+        <mat-label>Hora</mat-label>
+        <input [formControl]="timeControl" matInput />
+      </mat-form-field>
+    </div>
+
+    <div class="col-3">
+      <mat-form-field class="w-100">
+        <mat-label>Despachante</mat-label>
+        <input [formControl]="dispatcherControl" matInput />
+      </mat-form-field>
+    </div>
+    <div class="col-3">
+      <mat-form-field class="w-100">
+        <mat-label>Cliente</mat-label>
+        <input [formControl]="clientControl" matInput />
+      </mat-form-field>
+    </div>
+    <div class="col-3">
+      <mat-form-field class="w-100">
+        <mat-label>Detalle</mat-label>
+        <input [formControl]="detailControl" matInput />
+      </mat-form-field>
+    </div>
+    <div class="col-3">
+      <mat-form-field class="w-100">
+        <mat-label>Lugar de Carga</mat-label>
+        <input [formControl]="loadingPlaceControl" matInput />
+      </mat-form-field>
+    </div>
+    <div class="col-3">
+      <mat-form-field class="w-100">
+        <mat-label>Destino</mat-label>
+        <input [formControl]="destinationPlaceControl" matInput />
+      </mat-form-field>
+    </div>
+    <div class="col-3">
+      <mat-form-field class="w-100">
+        <mat-label>Chofer</mat-label>
+        <mat-select [formControl]="driverControl">
+          <mat-option
+            *ngFor="let driver of availableDrivers"
+            [value]="driver.name"
+          >
+            {{ driver.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-3">
+      <mat-form-field class="w-100">
+        <mat-label>Semi</mat-label>
+        <input [formControl]="mobileControl" matInput />
+      </mat-form-field>
+    </div>
+    <div class="col-3">
+      <mat-form-field class="w-100">
+        <mat-label>N° Contenedor</mat-label>
+        <input [formControl]="containerControl" matInput />
+      </mat-form-field>
+    </div>
+    <div class="col-3">
+      <mat-form-field>
+        <mat-label>Vencimiento</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          [formControl]="expirationControl"
+        />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-3">
+      <mat-form-field class="w-100">
+        <mat-label>Ref</mat-label>
+        <input [formControl]="codeRefControl" matInput />
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+<div mat-dialog-actions class="dialog-actions">
+  <button mat-button mat-dialog-close="">Cancelar</button>
+  <button (click)="onSubmit()" mat-button>Guardar</button>
+</div>
